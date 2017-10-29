@@ -9,7 +9,7 @@ struct atomic_ring * a;
 // struct timespec * sleepytime;
 
 #define SIZE 16
-#define ITERS 10000000
+#define ITERS 100000000
 // #define NSLEEP 1000
 
 void * producer(void * v);
@@ -28,9 +28,9 @@ int main()
 	aring_init(a, SIZE);
 	// sleepytime = calloc(1, sizeof *sleepytime);
 	// sleepytime->tv_nsec = NSLEEP;
-	pthread_create(&t, NULL, &consumer, NULL);
 	unsigned long long t1, t2;
 	t1 = nstime();
+	pthread_create(&t, NULL, &consumer, NULL);
 	producer(NULL);
 	pthread_join(t, NULL);
 	t2 = nstime();
