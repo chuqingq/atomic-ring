@@ -10,7 +10,7 @@ aring_64:
 	cc -std=gnu11 -Os -march=native -o aring_64 aring_64.c ../aring.o -pthread
 
 aring_16:
-	cc -std=gnu11 -Os -march=native -o aring_16 aring_16.c ../aring.o -pthread
+	cc -std=gnu11 -O3 -march=native -o aring_16 aring_16.c ../aring.o -pthread
 
 aring_1:
 	cc -std=gnu11 -Os -march=native -o aring_1 aring_1.c ../aring.o -pthread
